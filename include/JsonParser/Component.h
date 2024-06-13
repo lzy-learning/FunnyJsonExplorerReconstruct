@@ -114,4 +114,10 @@ public:
      * @return {std::string}
      */
     virtual std::string draw();
+
+    /**
+     * @description: 当前容器中有多少结点
+     * @return {*}
+     */    
+    int getSize();
 };

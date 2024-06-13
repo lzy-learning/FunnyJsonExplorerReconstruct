@@ -30,7 +30,7 @@ public:
      */
     virtual void registerStyle() = 0;
 
-    virtual std::shared_ptr<JsonExplorerContext> getFactory();
+    virtual std::shared_ptr<JsonExplorerContext> getContext();
 };
 
 /**

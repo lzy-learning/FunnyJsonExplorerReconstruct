@@ -24,10 +24,6 @@ class JsonComponentIterator : public Iterator
 private:
     // 为了保存层级信息，需要用stack模拟递归栈，保存Container和对应的idx
     std::stack<std::pair<std::shared_ptr<Container>, int>> mStack;
-    // 迭代器所处的当前结点
-    std::shared_ptr<Container> mCurContainer;
-    // 如果当前结点是Container结点，那么mIdx保存了当前结点的位置
-    int mIdx;
 
 public:
     /**

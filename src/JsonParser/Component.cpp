@@ -59,3 +59,8 @@ std::string Container::draw()
 {
     return mKey;
 }
+
+int Container::getSize()
+{
+    return mInnerComponents.size();
+}

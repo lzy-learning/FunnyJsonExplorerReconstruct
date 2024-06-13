@@ -48,6 +48,9 @@ void RectangleStyleFactory::render(const std::string &filename)
         auto component = jsonIterator->next();
 
         UString display;
+        // 如果是叶子节点需要特殊讨论，因为在迭代器中叶子节点是不会表明前进了一个层次的
+        if (std::dynamic_pointer_cast<Leaf>(component) && level != 0)
+            level += 1;
         for (int i = 0; i < level; i++)
             display.appendCh("│").appendCh(" ").appendCh(" ");
         display.appendCh("├").appendCh("─");
@@ -114,6 +117,8 @@ void RectangleStyleFactory::render(const std::string &filename)
             lastLine[i] = "┴";
             break;
         }
+        else if (lastLine[i] == "│")
+            lastLine[i] = "┴";
         else if (lastLine[i] == " ")
             lastLine[i] = "─";
     }

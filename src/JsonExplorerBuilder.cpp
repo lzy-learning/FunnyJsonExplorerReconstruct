@@ -6,7 +6,7 @@ Builder::Builder()
 }
 Builder::~Builder() {}
 
-std::shared_ptr<JsonExplorerContext> Builder::getFactory()
+std::shared_ptr<JsonExplorerContext> Builder::getContext()
 {
     return mJsonExplorerContext;
 }

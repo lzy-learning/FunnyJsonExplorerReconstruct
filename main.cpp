@@ -21,7 +21,7 @@ int main(int argc, char **argv)
     // styleName默认为Rectangle
     if (styleName.empty())
         styleName = "rect";
-    // iconFamilyName默认为pocker-face
+    // iconFamilyName默认为poker-face
     if (iconFamilyName.empty())
         iconFamilyName = "poker-face";
 
@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     // 构建jsonExplorerFactory
     director->makeDefaultJsonExplorerContext(builder);
     // 获取jsonExplorerFactory
-    auto jsonExplorerContext = builder->getFactory();
+    auto jsonExplorerContext = builder->getContext();
 
     // 用户指定json文件、风格和图标族，然后进行渲染
     jsonExplorerContext->setStrategy(styleName, iconFamilyName);
